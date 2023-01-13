@@ -4,7 +4,6 @@ require("dotenv").config();
 
 const animeRouter = require("./routes/anime.router.js");
 const errorHandler = require("./middlewares/errorHandler.js");
-const loadAnimeData = require("./middlewares/loadAnimeData.js");
 
 const port = process.env.PORT || 8000;
 const app = express();
