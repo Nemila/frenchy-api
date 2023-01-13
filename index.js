@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/anime", loadAnimeData, animeRouter);
+app.get("/", (req, res) => res.status(200).send("Welcome to frenchy api"));
 
 app.use(errorHandler);
 app.listen(port, () => console.log(`Server listening on port ${port}`));
