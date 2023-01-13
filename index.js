@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/anime", loadAnimeData, animeRouter);
+app.use("/anime", animeRouter);
 app.get("/", (req, res) => res.status(200).send("Welcome to frenchy api"));
 
 app.use(errorHandler);

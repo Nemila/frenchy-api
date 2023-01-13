@@ -1,13 +1,15 @@
 const api = require("anime-vostfr");
 const asyncHandler = require("express-async-handler");
+const api = require("anime-vostfr");
 
 // const getAnime = (req, res) => res.status(200).json(req.data.slice(0, 60));
 // const getAnimeVF = (req, res) => res.status(200).json(req.dataVF.slice(0, 60));
 
-const getPopularAnime = (req, res) => {
+const getPopularAnime = asyncHandler(async (req, res) => {
+  const dataVF = await api.loadAnimeVF();
   const result = api.popularAnime(req.dataVF);
   res.status(200).json(result.slice(0, 60));
-};
+});
 
 // const getBestScore = (req, res) => {
 //   const { vf } = req.body;
